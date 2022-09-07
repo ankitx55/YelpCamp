@@ -1,20 +1,31 @@
-const express = require("express");
+const express = require('express');
+const path = require('path');
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/yelp-camp',{
+   useNewUrlParser: true,
+   useCreateIndex: true,
+   useUnifiedTopology: true,
+})
+
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, 'connection error'));
+db.once("open", () => {
+   console.log("Database Connected");
+});
+
 const app = express();
 
-// const mongoose = require(mongoose);
+app.set('viwe engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
-const path = require("path");
-
-app.set("viwe engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
-
-app.get("/", (req, res) => {
-   res.send("listening on port 3000");
+app.get('/', (req, res) => {
+   res.render('home');
 });
-app.get("/", (req, res) => {
-   res.render("home");
-});
+// app.get('/', (req, res) => {
+//    res.send("hello from yelp camp")
+// })
 
 app.listen(3000, () => {
-   console.log("listening on port 3000");
-});
+   console.log("listening on port 3000")
+})
