@@ -1,0 +1,29 @@
+{
+  "name": "yelpcamp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankitx55/YelpCamp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ankitx55/YelpCamp/issues"
+  },
+  "homepage": "https://github.com/ankitx55/YelpCamp#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "method": "^2.0.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.1.3",
+    "nodemon": "^3.0.3",
+    "override": "^0.0.1"
+  },
+  "description": ""
+}
